@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 
+import DayOfWeek from "./dayOfWeek"
+
 export default class App extends Component {
+  renderDays = () => {
+    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    return days.map(day => <DayOfWeek day={day} />)
+  }
+
   render() {
     return (
       <div className='app'>
@@ -12,7 +19,7 @@ export default class App extends Component {
 
         <div className="calendar-wrapper">
           <div className="days-wrapper">
-          
+            {this.renderDays()}
           </div>
 
           <div className="blocks-wrapper">
